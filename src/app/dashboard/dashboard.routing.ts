@@ -4,6 +4,7 @@ import { ClientesEditarComponent } from '../clientes/clientes-editar/clientes-ed
 import { ClientesComponent } from '../clientes/clientes.component';
 
 import { DashboardComponent } from './dashboard.component';
+import { VentasComponent } from '../ventas/ventas.component';
 
 export const DashboardRoutes: Routes = [
     {
@@ -12,6 +13,9 @@ export const DashboardRoutes: Routes = [
       children: [ {
         path: 'dashboard',
         component: DashboardComponent
+      },{
+        path: 'ventas',
+        component: VentasComponent
       },
       {
         path:'clientes',

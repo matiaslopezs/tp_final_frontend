@@ -48,9 +48,14 @@ import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 
 import { AppRoutes } from './app.routing';
+import { VentasComponent } from './ventas/ventas.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ClientesAgregarComponent } from './clientes/clientes-agregar/clientes-agregar.component';
 import { ClientesEditarComponent } from './clientes/clientes-editar/clientes-editar.component';
+import { ProductoComponent } from './producto/producto.component';
+import { ProductoAgregarComponent } from './producto/producto-agregar/producto-agregar.component';
+import { ProductoEditarComponent } from './producto/producto-editar/producto-editar.component';
+import { ReporteResumidoComponent } from './reporte-resumido/reporte-resumido.component';
 
 @NgModule({
   exports: [
@@ -109,9 +114,17 @@ export class MaterialModule {}
         AppComponent,
         AdminLayoutComponent,
         AuthLayoutComponent,
+        VentasComponent,
+        //componentes de clientes
         ClientesComponent,
         ClientesAgregarComponent,
-        ClientesEditarComponent
+        ClientesEditarComponent,
+        //componentes de productos
+        ProductoComponent,
+        ProductoAgregarComponent,
+        ProductoEditarComponent,
+        //Reportess
+        ReporteResumidoComponent,
     ],
     providers : [
       MatNativeDateModule

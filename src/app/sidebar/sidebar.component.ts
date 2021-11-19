@@ -27,6 +27,11 @@ export const ROUTES: RouteInfo[] = [{
         type: 'link',
         icontype: 'dashboard'
     },{
+        path: 'ventas', 
+        title: 'Ventas', 
+        type: 'link', 
+        icontype:'timeline'
+    },{
         path: '/components',
         title: 'Components',
         type: 'sub',
@@ -111,7 +116,17 @@ export const ROUTES: RouteInfo[] = [{
             {path: 'lock', title: 'Lock Screen Page', ab:'LSP'},
             {path: 'user', title: 'User Page', ab:'UP'}
         ]
-    }
+    },{
+        path: '/productoComponent',
+        title: 'Producto',
+        type: 'link',
+        icontype: 'inventory_2'
+    },{
+        path: '/reporteResumido',
+        title: 'Reporte de ventas (Resumido)',
+        type: 'link',
+        icontype: 'inventory_2'
+    },
 ];
 @Component({
     selector: 'app-sidebar-cmp',
