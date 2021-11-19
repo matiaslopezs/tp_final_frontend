@@ -48,6 +48,7 @@ import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 
 import { AppRoutes } from './app.routing';
+import { VentasComponent } from './ventas/ventas.component';
 
 @NgModule({
   exports: [
@@ -104,7 +105,8 @@ export class MaterialModule {}
     declarations: [
         AppComponent,
         AdminLayoutComponent,
-        AuthLayoutComponent
+        AuthLayoutComponent,
+        VentasComponent,
     ],
     providers : [
       MatNativeDateModule

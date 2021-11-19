@@ -1,0 +1,94 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card ">
+            <div class="card-header card-header-primary card-header-text">
+              <div class="card-text">
+                <h4 class="card-title">Venta Nueva</h4>
+              </div>
+            </div>
+            <div class="card-body ">
+              <form method="#" action="#" >
+                <div class="row">
+                  <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                      <input matInput name="apellido" placeholder="Numero de Factura" type="number" [(ngModel)]="venta.numeroFactura">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-sm-4">
+                      <mat-form-field class="example-full-width">
+                          <mat-select placeholder="Cliente" name="cliente"  [(ngModel)]="venta.cliente" >
+                          <mat-option *ngFor="let cliente of clientes" [value]="cliente.id">
+                              {{ cliente.nombre }}
+                          </mat-option>
+                          </mat-select>
+                      </mat-form-field>
+                  </div>
+                  <div class="col-sm-4">
+                    <mat-form-field >
+                        <input matInput name="fecha" [matDatepicker]="picker" placeholder="Fecha" (click)="picker.open()" [(ngModel)]="venta.fecha">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Subtotal</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let detalle of detalles">
+                                <td>{{ detalle.producto }}</td>
+                                <td>
+                                    {{ detalle.cantidad }}
+                                </td>
+                                <td>{{ detalle.total }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" (click)="eliminarProducto(detalle)">-</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                      <input matInput name="producto" placeholder="Producto" type="text" [(ngModel)]="detalle.producto">
+                                </td>
+                                <td>
+                                      <input matInput name="cantidad" placeholder="Cantidad" type="number" [(ngModel)]="detalle.cantidad">
+                                </td>
+                                <td>
+                                      <input matInput name="total" placeholder="Total" type="number" [(ngModel)]="detalle.total">
+                                </td>
+                                <td>
+                                    <button (click)="agregarProducto()" class="btn btn-success text-center">+</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- show total of sale 'venta.total'  -->
+                    <div class="row">
+                        <div class="col-sm-12 p-3">
+                            <h5>Total: {{venta.total}}</h5>
+                        </div>
+                    </div>
+                </div>
+              </form>
+            </div>
+            <!-- div card footer with items aligned to right -->
+            <div class="card-footer ">
+              <div class="row">
+                <div class="col-md-12">
+                    <button class="btn btn-fill btn-primary mx-2" (click)="createVenta()">Guardar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -27,6 +27,11 @@ export const ROUTES: RouteInfo[] = [{
         type: 'link',
         icontype: 'dashboard'
     },{
+        path: 'ventas', 
+        title: 'Ventas', 
+        type: 'link', 
+        icontype:'timeline'
+    },{
         path: '/components',
         title: 'Components',
         type: 'sub',
