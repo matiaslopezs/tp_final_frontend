@@ -5,6 +5,7 @@ import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { ProductoComponent } from './producto/producto.component';
 import { ProductoAgregarComponent } from './producto/producto-agregar/producto-agregar.component';
 import { ProductoEditarComponent } from  './producto/producto-editar/producto-editar.component'
+import { ReporteResumidoComponent } from './reporte-resumido/reporte-resumido.component';
 export const AppRoutes: Routes = [
     {
       path: '',
@@ -50,10 +51,12 @@ export const AppRoutes: Routes = [
     },{
         path:'productoComponent/crear',
         component:ProductoAgregarComponent,
-    },
-    {
+    },{
         path:'productoComponent/editar/:id',
         component:ProductoEditarComponent,
+    },{
+        path:'reporteResumido',
+        component:ReporteResumidoComponent,
     },
   ]}, {
       path: '',

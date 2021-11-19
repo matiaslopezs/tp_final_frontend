@@ -51,6 +51,7 @@ import { AppRoutes } from './app.routing';
 import { ProductoComponent } from './producto/producto.component';
 import { ProductoAgregarComponent } from './producto/producto-agregar/producto-agregar.component';
 import { ProductoEditarComponent } from './producto/producto-editar/producto-editar.component';
+import { ReporteResumidoComponent } from './reporte-resumido/reporte-resumido.component';
 
 @NgModule({
   exports: [
@@ -87,6 +88,8 @@ import { ProductoEditarComponent } from './producto/producto-editar/producto-edi
   ],
   declarations: [
    
+  
+    
   ]
 })
 export class MaterialModule {}
@@ -114,7 +117,9 @@ export class MaterialModule {}
         //componentes de productos
         ProductoComponent,
         ProductoAgregarComponent,
-        ProductoEditarComponent
+        ProductoEditarComponent,
+        //Reportess
+        ReporteResumidoComponent
     ],
     providers : [
       MatNativeDateModule
