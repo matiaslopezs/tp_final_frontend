@@ -45,8 +45,8 @@
                                       <td>{{client.nombreapellido}}</td>
                                       <td>{{client.email}}</td>
                                       <td class="text-right">
-                                        <a href="javascript:void(0" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
-                                        <a href="javascript:void(0s" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
+                                        <a  (click)="edit(client)" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
+                                        <a (click)="delete(client)" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
                                       </td>
                                     </tr>
                                 </tbody>

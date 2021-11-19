@@ -1,6 +1,6 @@
-// IMPORTANT: this is a plugin which requires jQuery for initialisation and data manipulation
-
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { Clientes } from '../model/clientes';
 
 declare interface DataTable {
@@ -20,6 +20,8 @@ declare const $: any;
 export class ClientesComponent implements OnInit, AfterViewInit {
     public dataTable: DataTable;
     public clientes: Clientes[];
+
+    constructor(private router: Router) { }
 
     ngOnInit() {
 
@@ -86,4 +88,31 @@ export class ClientesComponent implements OnInit, AfterViewInit {
 
       $('.card .material-datatables label').addClass('form-group');
     }
+    
+  edit(client: Clientes){
+    this.router.navigate(['editarcliente/',client.ruc]);
+  }
+
+  delete(client: Clientes){
+    //quitar el antiguo de la lista
+    console.log('before: ',this.clientes)
+    const indice = this.clientes.indexOf(client)
+    if (indice > -1) {
+      this.clientes.splice(indice,1)
+    }
+    console.log('after: ',this.clientes)
+    Swal.fire({
+      title: 'Eliminado!',
+      text: 'Se eliminó al cliente exitosamente.',
+      icon: 'success',
+      customClass: {
+      confirmButton: 'btn btn-warning',
+      },
+      buttonsStyling: false,
+    }).then(() => {
+        this.router.navigate(['/clientes'])
+    });
+    // guardamos los cambios en el local storage
+    localStorage.setItem("listaclientes", JSON.stringify(this.clientes));
+  }
 }
