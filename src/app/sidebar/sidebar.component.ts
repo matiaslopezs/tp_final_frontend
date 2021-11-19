@@ -122,6 +122,11 @@ export const ROUTES: RouteInfo[] = [{
         type: 'link',
         icontype: 'inventory_2'
     },{
+        path: 'reporteDetallado',
+        title: 'Reporte de ventas',
+        type: 'link',
+        icontype: 'inventory_2'
+    },{ 
         path: '/reporteResumido',
         title: 'Reporte de ventas (Resumido)',
         type: 'link',
