@@ -48,6 +48,8 @@ import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 
 import { AppRoutes } from './app.routing';
+import { ClientesComponent } from './clientes/clientes.component';
+import { ClientesAgregarComponent } from './clientes/clientes-agregar/clientes-agregar.component';
 
 @NgModule({
   exports: [
@@ -81,7 +83,7 @@ import { AppRoutes } from './app.routing';
     MatToolbarModule,
     MatTooltipModule,
     MatNativeDateModule
-  ]
+  ] //acá se suele crear un declarations con los nuevos componentes, pero eso no funcioná acá. Borrar acá y poner abajo con el resto.
 })
 export class MaterialModule {}
 
@@ -104,7 +106,9 @@ export class MaterialModule {}
     declarations: [
         AppComponent,
         AdminLayoutComponent,
-        AuthLayoutComponent
+        AuthLayoutComponent,
+        ClientesComponent,
+        ClientesAgregarComponent
     ],
     providers : [
       MatNativeDateModule
