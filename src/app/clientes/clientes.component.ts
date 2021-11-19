@@ -95,12 +95,12 @@ export class ClientesComponent implements OnInit, AfterViewInit {
 
   delete(client: Clientes){
     //quitar el antiguo de la lista
-    console.log('before: ',this.clientes)
+    // console.log('before: ',this.clientes)
     const indice = this.clientes.indexOf(client)
     if (indice > -1) {
       this.clientes.splice(indice,1)
     }
-    console.log('after: ',this.clientes)
+    // console.log('after: ',this.clientes)
     Swal.fire({
       title: 'Eliminado!',
       text: 'Se eliminó al cliente exitosamente.',

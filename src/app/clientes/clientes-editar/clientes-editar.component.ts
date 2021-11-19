@@ -9,26 +9,27 @@ import Swal from 'sweetalert2';
   styleUrls: ['./clientes-editar.component.css']
 })
 export class ClientesEditarComponent implements OnInit {
-  cliente: Clientes;
-  oldcliente: Clientes;
+  cliente: Clientes = new Clientes();
+  oldcliente: Clientes  = new Clientes();
   listaclientes: Clientes[]=[];
   mensaje: string = "";
  
   constructor(private route: ActivatedRoute,private router: Router) { }
 
   ngOnInit(): void {
+    this.listaclientes = JSON.parse(localStorage.getItem('listaclientes')) || [];
+    let nuevaLista = [... this.listaclientes];
+      
     this.route.params.subscribe((params) =>{
       const ruc = +params['ruc']; // el + convierte el string id a number
-      this.listaclientes = JSON.parse(localStorage.getItem('listaclientes')) || [];
-      this.cliente = this.listaclientes.find(cl => cl.ruc === ruc);
-      this.oldcliente = this.cliente;
+      this.cliente = nuevaLista.find(cl => cl.ruc === ruc)
     });
-    console.log(this.listaclientes)
+    this.oldcliente = this.cliente;
   }
 
-  modificar(): void{
+  modificar(client: Clientes): void{
     // si los campos son válidos
-    if (this.cliente.ruc && this.cliente.nombreapellido && this.cliente.email && this.rucvalido(this.cliente.ruc)) {
+    if (client.ruc && client.nombreapellido && client.email && this.rucvalido(client.ruc)) {
       //quitar el antiguo de la lista
       console.log('before: ',this.listaclientes)
       const indice = this.listaclientes.indexOf(this.oldcliente)
@@ -37,10 +38,10 @@ export class ClientesEditarComponent implements OnInit {
       }
       console.log('after: ',this.listaclientes)
       // añadir el nuevo en la lista    
-      this.listaclientes.push(this.cliente)
+      this.listaclientes.push(client)
       console.log(this.listaclientes)
       // almacenar la lista en localStorage
-      // localStorage.setItem("listaclientes", JSON.stringify(this.listaclientes));
+      localStorage.setItem("listaclientes", JSON.stringify(this.listaclientes));
       this.mensaje='Agregado exitosamente'
       // imprimir mensaje
       Swal.fire({
@@ -70,8 +71,8 @@ export class ClientesEditarComponent implements OnInit {
   rucvalido(nuevoruc) {
     let valido = true;
     // si el ruc ya existe en el array entonces no es valido
-    console.log("este id ya existe: ",this.listaclientes.find(cl => cl.ruc === nuevoruc))
-    if (this.listaclientes.find(cl => cl.ruc === nuevoruc) != null){
+    let storageclientes = JSON.parse(localStorage.getItem('listaclientes')) || [];
+    if (storageclientes.find(cl => cl.ruc === nuevoruc) != null){
       valido = false;
     }
     return valido;
