@@ -80,7 +80,12 @@ export const ROUTES: RouteInfo[] = [{
             {path: 'fullscreen', title: 'Full Screen Map', ab:'FSM'},
             {path: 'vector', title: 'Vector Map', ab:'VM'}
         ]
-    },{
+    },{ 
+        path: '/clientes', 
+        title: 'Clientes', 
+        type: 'link', 
+        icontype:'face'}
+    ,{
         path: '/widgets',
         title: 'Widgets',
         type: 'link',
