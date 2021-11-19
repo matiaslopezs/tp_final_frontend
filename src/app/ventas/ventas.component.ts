@@ -9,8 +9,9 @@ import { Venta } from '../model/venta';
 })
 export class VentasComponent implements OnInit {
   venta = new Venta();
-  clientes:Clientes[] = []
-  detalles = []
+  clientes:Clientes[] = [];
+  detalles = [];
+  productos = [];
   detalle = {producto:"", cantidad:0, total:0};
 
   constructor() { }
@@ -18,6 +19,7 @@ export class VentasComponent implements OnInit {
   ngOnInit(): void {
     this.clientes = JSON.parse(localStorage.getItem('listaclientes')) || [];
     this.venta.fecha = new Date();
+    this.productos = JSON.parse(localStorage.getItem('productos')) || [];
   }
 
   agregarProducto(){

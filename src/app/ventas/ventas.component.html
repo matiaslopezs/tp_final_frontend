@@ -19,9 +19,9 @@
                   <div class="col-sm-4">
                       <mat-form-field class="example-full-width">
                           <mat-select placeholder="Cliente" name="cliente"  [(ngModel)]="venta.cliente" >
-                          <mat-option *ngFor="let cliente of clientes" [value]="cliente.ruc">
-                              {{ cliente.nombreapellido }}
-                          </mat-option>
+                            <mat-option *ngFor="let cliente of clientes" [value]="cliente.ruc">
+                                {{ cliente.nombreapellido }}
+                            </mat-option>
                           </mat-select>
                       </mat-form-field>
                   </div>
@@ -56,16 +56,20 @@
                             </tr>
                             <tr>
                                 <td>
-                                      <input matInput name="producto" placeholder="Producto" type="text" [(ngModel)]="detalle.producto">
+                                  <mat-select placeholder="Producto" name="producto"  [(ngModel)]="detalle.producto" >
+                                    <mat-option *ngFor="let producto of productos" [value]="producto.nombre">
+                                        {{ producto.nombre }}
+                                    </mat-option>
+                                  </mat-select>
                                 </td>
                                 <td>
-                                      <input matInput name="cantidad" placeholder="Cantidad" type="number" [(ngModel)]="detalle.cantidad">
+                                  <input matInput name="cantidad" placeholder="Cantidad" type="number" [(ngModel)]="detalle.cantidad">
                                 </td>
                                 <td>
-                                      <input matInput name="total" placeholder="Total" type="number" [(ngModel)]="detalle.total">
+                                  <input matInput name="total" placeholder="Total" type="number" [(ngModel)]="detalle.total">
                                 </td>
                                 <td>
-                                    <button (click)="agregarProducto()" class="btn btn-success text-center">+</button>
+                                  <button (click)="agregarProducto()" class="btn btn-success text-center">+</button>
                                 </td>
                             </tr>
                         </tbody>
