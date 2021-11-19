@@ -1,21 +1,5 @@
 <div class="main-content">
     <div class="container-fluid">
-
-      <div *ngIf="clientes.length>0">
-        <table border="1">
-          <tr>
-            <td>RUC</td>
-            <td>Nombre y Apellido</td>
-            <td>E-mail</td>
-          </tr>
-          <tr *ngFor="let cl of clientes">
-            <td>{{cl.ruc}}</td>
-            <td>{{cl.nombreapellido}}</td>
-            <td>{{cl.email}}</td>
-          </tr>
-        </table>
-      </div>      
-
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -52,14 +36,18 @@
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <tr *ngFor="let row of dataTable.dataRows">
+                                    <!-- <tr *ngFor="let row of dataTable.dataRows">
                                         <td>{{row[0]}}</td>
                                         <td>{{row[1]}}</td>
-                                        <td>{{row[2]}}</td>
-                                        <td class="text-right">
-                                          <a href="javascript:void(0" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
-                                          <a href="javascript:void(0s" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
-                                        </td>
+                                        <td>{{row[2]}}</td> -->
+                                    <tr *ngFor="let client of clientes">
+                                      <td>{{client.ruc}}</td>
+                                      <td>{{client.nombreapellido}}</td>
+                                      <td>{{client.email}}</td>
+                                      <td class="text-right">
+                                        <a  (click)="edit(client)" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
+                                        <a (click)="delete(client)" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
+                                      </td>
                                     </tr>
                                 </tbody>
                             </table>

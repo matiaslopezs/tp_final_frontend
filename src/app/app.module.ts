@@ -51,10 +51,12 @@ import { AppRoutes } from './app.routing';
 import { VentasComponent } from './ventas/ventas.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ClientesAgregarComponent } from './clientes/clientes-agregar/clientes-agregar.component';
+import { ClientesEditarComponent } from './clientes/clientes-editar/clientes-editar.component';
 import { ProductoComponent } from './producto/producto.component';
 import { ProductoAgregarComponent } from './producto/producto-agregar/producto-agregar.component';
 import { ProductoEditarComponent } from './producto/producto-editar/producto-editar.component';
 import { ReporteResumidoComponent } from './reporte-resumido/reporte-resumido.component';
+import { ReporteDetalladoComponent } from './reporte-detallado/reporte-detallado.component';
 
 @NgModule({
   exports: [
@@ -88,7 +90,8 @@ import { ReporteResumidoComponent } from './reporte-resumido/reporte-resumido.co
     MatToolbarModule,
     MatTooltipModule,
     MatNativeDateModule
-  ] //acá se suele crear un declarations con los nuevos componentes, pero eso no funcioná acá. Borrar acá y poner abajo con el resto.
+  ],
+   //acá se suele crear un declarations con los nuevos componentes, pero eso no funcioná acá. Borrar acá y poner abajo con el resto.
 })
 export class MaterialModule {}
 
@@ -113,14 +116,18 @@ export class MaterialModule {}
         AdminLayoutComponent,
         AuthLayoutComponent,
         VentasComponent,
+        //componentes de clientes
         ClientesComponent,
         ClientesAgregarComponent,
+        ClientesEditarComponent,
         //componentes de productos
         ProductoComponent,
         ProductoAgregarComponent,
         ProductoEditarComponent,
         //Reportess
         ReporteResumidoComponent,
+        ReporteDetalladoComponent,
+
     ],
     providers : [
       MatNativeDateModule
