@@ -55,6 +55,7 @@ import { ProductoComponent } from './producto/producto.component';
 import { ProductoAgregarComponent } from './producto/producto-agregar/producto-agregar.component';
 import { ProductoEditarComponent } from './producto/producto-editar/producto-editar.component';
 import { ReporteResumidoComponent } from './reporte-resumido/reporte-resumido.component';
+import { ReporteDetalladoComponent } from './reporte-detallado/reporte-detallado.component';
 
 @NgModule({
   exports: [
@@ -121,6 +122,8 @@ export class MaterialModule {}
         ProductoEditarComponent,
         //Reportess
         ReporteResumidoComponent,
+        ReporteDetalladoComponent,
+
     ],
     providers : [
       MatNativeDateModule
