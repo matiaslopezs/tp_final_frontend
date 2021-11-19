@@ -20,7 +20,7 @@ export class ClientesAgregarComponent implements OnInit {
 
   guardar(): void{
     // si los campos son válidos
-    if (this.cliente.ruc && this.cliente.nombreapellido && this.cliente.email) {
+    if (this.cliente.ruc && this.cliente.nombreapellido && this.cliente.email && this.rucvalido(this.cliente.ruc)) {
       // añadir a la lista    
       this.listaclientes.push(this.cliente)
       console.log(this.listaclientes)
@@ -51,6 +51,15 @@ export class ClientesAgregarComponent implements OnInit {
           buttonsStyling: false,
       });
     }
+  }
+  rucvalido(nuevoruc) {
+    let valido = true;
+    // si el ruc ya existe en el array entonces no es valido
+    console.log("este id ya existe: ",this.listaclientes.find(cl => cl.ruc === nuevoruc))
+    if (this.listaclientes.find(cl => cl.ruc === nuevoruc) != null){
+      valido = false;
+    }
+    return valido;
   }
   
 }
