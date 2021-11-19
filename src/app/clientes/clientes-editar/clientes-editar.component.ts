@@ -13,6 +13,7 @@ export class ClientesEditarComponent implements OnInit {
   oldcliente: Clientes  = new Clientes();
   listaclientes: Clientes[]=[];
   mensaje: string = "";
+  ruc: string = "";
  
   constructor(private route: ActivatedRoute,private router: Router) { }
 
@@ -21,8 +22,8 @@ export class ClientesEditarComponent implements OnInit {
     let nuevaLista = [... this.listaclientes];
       
     this.route.params.subscribe((params) =>{
-      const ruc = +params['ruc']; // el + convierte el string id a number
-      this.cliente = nuevaLista.find(cl => cl.ruc === ruc)
+      this.ruc = params['ruc'];
+      this.cliente = nuevaLista.find(cl => cl.ruc === this.ruc)
     });
     this.oldcliente = this.cliente;
   }
@@ -70,9 +71,10 @@ export class ClientesEditarComponent implements OnInit {
   }
   rucvalido(nuevoruc) {
     let valido = true;
-    // si el ruc ya existe en el array entonces no es valido
     let storageclientes = JSON.parse(localStorage.getItem('listaclientes')) || [];
-    if (storageclientes.find(cl => cl.ruc === nuevoruc) != null){
+    let testcliente = storageclientes.find(cl => cl.ruc === this.ruc)
+    // si el ruc ya existe en el array entonces no es valido
+    if (storageclientes.find(cl => cl.ruc === nuevoruc) != null && testcliente.ruc !== this.cliente.ruc){
       valido = false;
     }
     return valido;
