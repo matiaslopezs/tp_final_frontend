@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Clientes } from '../model/clientes';
 import { Venta } from '../model/venta';
 
 @Component({
@@ -8,13 +9,15 @@ import { Venta } from '../model/venta';
 })
 export class VentasComponent implements OnInit {
   venta = new Venta();
-  clientes = [{id: 1, nombre: 'Juan'}, {id: 2, nombre: 'Pedro'}];
+  clientes:Clientes[] = []
   detalles = []
   detalle = {producto:"", cantidad:0, total:0};
 
   constructor() { }
 
   ngOnInit(): void {
+    this.clientes = JSON.parse(localStorage.getItem('listaclientes')) || [];
+    this.venta.fecha = new Date();
   }
 
   agregarProducto(){

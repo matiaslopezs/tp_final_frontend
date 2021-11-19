@@ -19,8 +19,8 @@
                   <div class="col-sm-4">
                       <mat-form-field class="example-full-width">
                           <mat-select placeholder="Cliente" name="cliente"  [(ngModel)]="venta.cliente" >
-                          <mat-option *ngFor="let cliente of clientes" [value]="cliente.id">
-                              {{ cliente.nombre }}
+                          <mat-option *ngFor="let cliente of clientes" [value]="cliente.ruc">
+                              {{ cliente.nombreapellido }}
                           </mat-option>
                           </mat-select>
                       </mat-form-field>
