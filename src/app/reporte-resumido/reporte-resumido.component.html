@@ -6,7 +6,7 @@
               <div class="card ">
                 <div class="card-body ">
                     <div class="row">
-                      <label class="col-sm-2 col-form-label">Cliente:  </label>
+                      <label class="col-sm-2 col-form-label">Ruc del Cliente:  </label>
                       <div class="col-sm-3">
                         <mat-form-field class="example-full-width">
                           <input matInput  [(ngModel)]="cliente" type="text">
@@ -64,6 +64,8 @@
                                       <th>{{ dataTable.headerRow[1] }}</th>
                                       <th>{{ dataTable.headerRow[2] }}</th>
                                       <th>{{ dataTable.headerRow[3] }}</th>
+                                      <th>{{ dataTable.footerRow[4] }}</th>
+
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -72,14 +74,16 @@
                                       <th>{{ dataTable.footerRow[1] }}</th>
                                       <th>{{ dataTable.footerRow[2] }}</th>
                                       <th>{{ dataTable.footerRow[3] }}</th>
+                                      <th>{{ dataTable.footerRow[4] }}</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
                                     <tr *ngFor="let row of dataTable.dataRows">
-                                        <td>{{row.codigo}}</td>
-                                        <td>{{row.nombre}}</td>
-                                        <td>{{row.precioVenta}}</td>
-                                        <td>{{row.existencia}}</td>
+                                        <td>{{row.cliente}}</td>
+                                        <td>{{obtenerNombreCliente(row.cliente)}}</td>
+                                        <td>{{formatearFecha(row.fecha)}}</td>
+                                        <td>{{row.numeroFactura}}</td>
+                                        <td>{{row.total}}</td>
                                     </tr>
                                 </tbody>
                             </table>
