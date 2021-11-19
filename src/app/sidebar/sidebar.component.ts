@@ -27,6 +27,11 @@ export const ROUTES: RouteInfo[] = [{
         type: 'link',
         icontype: 'dashboard'
     },{
+        path: 'ventas', 
+        title: 'Ventas', 
+        type: 'link', 
+        icontype:'timeline'
+    },{
         path: '/components',
         title: 'Components',
         type: 'sub',
@@ -75,7 +80,12 @@ export const ROUTES: RouteInfo[] = [{
             {path: 'fullscreen', title: 'Full Screen Map', ab:'FSM'},
             {path: 'vector', title: 'Vector Map', ab:'VM'}
         ]
-    },{
+    },{ 
+        path: '/clientes', 
+        title: 'Clientes', 
+        type: 'link', 
+        icontype:'face'}
+    ,{
         path: '/widgets',
         title: 'Widgets',
         type: 'link',

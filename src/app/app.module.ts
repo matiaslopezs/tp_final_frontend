@@ -48,6 +48,9 @@ import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 
 import { AppRoutes } from './app.routing';
+import { VentasComponent } from './ventas/ventas.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { ClientesAgregarComponent } from './clientes/clientes-agregar/clientes-agregar.component';
 import { ProductoComponent } from './producto/producto.component';
 import { ProductoAgregarComponent } from './producto/producto-agregar/producto-agregar.component';
 import { ProductoEditarComponent } from './producto/producto-editar/producto-editar.component';
@@ -85,12 +88,7 @@ import { ReporteResumidoComponent } from './reporte-resumido/reporte-resumido.co
     MatToolbarModule,
     MatTooltipModule,
     MatNativeDateModule
-  ],
-  declarations: [
-   
-  
-    
-  ]
+  ] //acá se suele crear un declarations con los nuevos componentes, pero eso no funcioná acá. Borrar acá y poner abajo con el resto.
 })
 export class MaterialModule {}
 
@@ -114,12 +112,15 @@ export class MaterialModule {}
         AppComponent,
         AdminLayoutComponent,
         AuthLayoutComponent,
+        VentasComponent,
+        ClientesComponent,
+        ClientesAgregarComponent,
         //componentes de productos
         ProductoComponent,
         ProductoAgregarComponent,
         ProductoEditarComponent,
         //Reportess
-        ReporteResumidoComponent
+        ReporteResumidoComponent,
     ],
     providers : [
       MatNativeDateModule
