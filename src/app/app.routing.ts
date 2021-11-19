@@ -2,7 +2,9 @@ import { Routes } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
-
+import { ProductoComponent } from './producto/producto.component';
+import { ProductoAgregarComponent } from './producto/producto-agregar/producto-agregar.component';
+import { ProductoEditarComponent } from  './producto/producto-editar/producto-editar.component'
 export const AppRoutes: Routes = [
     {
       path: '',
@@ -42,7 +44,17 @@ export const AppRoutes: Routes = [
     }, {
         path: '',
         loadChildren: () => import('./timeline/timeline.module').then(m => m.TimelineModule)
-    }
+    },{
+        path:'productoComponent',
+        component:ProductoComponent,
+    },{
+        path:'productoComponent/crear',
+        component:ProductoAgregarComponent,
+    },
+    {
+        path:'productoComponent/editar/:id',
+        component:ProductoEditarComponent,
+    },
   ]}, {
       path: '',
       component: AuthLayoutComponent,

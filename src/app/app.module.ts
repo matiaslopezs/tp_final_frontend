@@ -48,6 +48,9 @@ import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 
 import { AppRoutes } from './app.routing';
+import { ProductoComponent } from './producto/producto.component';
+import { ProductoAgregarComponent } from './producto/producto-agregar/producto-agregar.component';
+import { ProductoEditarComponent } from './producto/producto-editar/producto-editar.component';
 
 @NgModule({
   exports: [
@@ -81,6 +84,9 @@ import { AppRoutes } from './app.routing';
     MatToolbarModule,
     MatTooltipModule,
     MatNativeDateModule
+  ],
+  declarations: [
+   
   ]
 })
 export class MaterialModule {}
@@ -104,7 +110,11 @@ export class MaterialModule {}
     declarations: [
         AppComponent,
         AdminLayoutComponent,
-        AuthLayoutComponent
+        AuthLayoutComponent,
+        //componentes de productos
+        ProductoComponent,
+        ProductoAgregarComponent,
+        ProductoEditarComponent
     ],
     providers : [
       MatNativeDateModule

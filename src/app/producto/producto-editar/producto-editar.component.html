@@ -1,0 +1,36 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <div class="card ">
+            <div class="card-header card-header-rose card-header-icon">
+              <div class="card-icon">
+                <i class="material-icons">edit</i>
+              </div>
+              <h4 class="card-title">Editar Producto</h4>
+            </div>
+            <div class="card-body ">
+              <form method="#" action="#">
+                <mat-form-field class="example-full-width">
+                  <input name="codigo" [(ngModel)]="codigo" matInput placeholder="Codigo" type="text" readonly>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <input name="nombre" [(ngModel)]="nombre"  matInput placeholder="Nombre" type="text" >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <input name="precioVenta" [(ngModel)]="precioVenta" matInput placeholder="Precion de Venta" type="number" >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <input name="existencia" [(ngModel)]="existencia" matInput placeholder="Existencia" type="number" >
+                </mat-form-field>
+              </form>
+            </div>
+            <div class="card-footer">
+              <button (click)="actualizarProducto()" mat-raised-button type="submit" class="btn btn-fill btn-rose">Editar</button>
+            </div>
+          </div>
+         </div>
+       </div>
+    </div>
+</div>
+  
