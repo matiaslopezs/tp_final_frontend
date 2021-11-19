@@ -51,6 +51,10 @@ import { AppRoutes } from './app.routing';
 import { VentasComponent } from './ventas/ventas.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ClientesAgregarComponent } from './clientes/clientes-agregar/clientes-agregar.component';
+import { ProductoComponent } from './producto/producto.component';
+import { ProductoAgregarComponent } from './producto/producto-agregar/producto-agregar.component';
+import { ProductoEditarComponent } from './producto/producto-editar/producto-editar.component';
+import { ReporteResumidoComponent } from './reporte-resumido/reporte-resumido.component';
 
 @NgModule({
   exports: [
@@ -110,7 +114,13 @@ export class MaterialModule {}
         AuthLayoutComponent,
         VentasComponent,
         ClientesComponent,
-        ClientesAgregarComponent
+        ClientesAgregarComponent,
+        //componentes de productos
+        ProductoComponent,
+        ProductoAgregarComponent,
+        ProductoEditarComponent,
+        //Reportess
+        ReporteResumidoComponent,
     ],
     providers : [
       MatNativeDateModule

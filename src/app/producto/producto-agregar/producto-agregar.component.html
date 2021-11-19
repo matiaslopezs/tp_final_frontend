@@ -1,0 +1,33 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <div class="card ">
+            <div class="card-header card-header-rose card-header-icon">
+              <div class="card-icon">
+                <i class="material-icons">add</i>
+              </div>
+              <h4 class="card-title">Crear Producto</h4>
+            </div>
+            <div class="card-body ">
+              <form method="#" action="#">
+                <mat-form-field class="example-full-width">
+                  <input [(ngModel)]="nombre"  matInput placeholder="Nombre" type="text" >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <input [(ngModel)]="precioVenta" matInput placeholder="Precion de Venta" type="number" >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <input [(ngModel)]="existencia" matInput placeholder="Existencia" type="number" >
+                </mat-form-field>
+              </form>
+            </div>
+            <div class="card-footer">
+              <button (click)="crearProducto()" mat-raised-button type="submit" class="btn btn-fill btn-rose">Crear</button>
+            </div>
+          </div>
+         </div>
+       </div>
+    </div>
+</div>
+  
