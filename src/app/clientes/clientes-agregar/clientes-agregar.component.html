@@ -1,17 +1,48 @@
-<div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    RUC: <input  [(ngModel)]="cliente.ruc">
-    <br>
-    Nombre y apellido: <input  [(ngModel)]="cliente.nombreapellido">
-    <br>
-    E-mail <input  [(ngModel)]="cliente.email">
-    <br>
-     <button  (click)="guardar()">Guardar</button>
-    <br/>
-     {{mensaje}}
-</div>
-    
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card ">
+            <div class="card-header card-header-primary card-header-text">
+              <div class="card-text">
+                <h4 class="card-title">Registre un nuevo cliente</h4>
+              </div>
+            </div>
+            <div class="card-body ">
+              <form method="#" action="#" >
+                <!-- <div class="row"> -->
+                  <div class="row-sm-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput name="ruc" placeholder="Número de R.U.C." type="number" [(ngModel)]="cliente.ruc">
+                    </mat-form-field>
+                  </div>
+                  <div class="row-sm-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput name="nombreapellido" placeholder="Nombre y Apellido" type="text" [(ngModel)]="cliente.nombreapellido">
+                    </mat-form-field>
+                  </div>
+                <!-- </div>
+                <div class="row"> -->
+                  <div class="row-sm-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput name="email" placeholder="Dirección de E-mail" type="text" [(ngModel)]="cliente.email">
+                    </mat-form-field>
+                  </div>
+                <!-- </div> -->
+              </form>
+            </div>
+            <!-- div card footer with items aligned to right -->
+            <div class="card-footer ">
+              <div class="row">
+                <div class="col-md-12">
+
+                  <button mat-raised-button class="btn btn-fill btn-primary mx-2" (click)='guardar()' >Guardar</button>
+                  <button mat-raised-button class="btn btn-fill btn-secondary mx-2" [routerLink]="['/clientes']">Cancelar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -19,24 +19,24 @@ declare const $: any;
 
 export class ClientesComponent implements OnInit, AfterViewInit {
     public dataTable: DataTable;
-    public clientes: Clientes[] = JSON.parse(localStorage.getItem('listaclientes')) || [];
+    public clientes: Clientes[];
 
     ngOnInit() {
 
+        this.clientes = JSON.parse(localStorage.getItem('listaclientes')) || [];
 
         this.dataTable = {
-            headerRow: [ 'RUC', 'Nombre', 'e-mail','editar/borrar' ],
-            footerRow: [ 'RUC', 'Nombre', 'e-mail','editar/borrar' ],
-
+            headerRow: [ 'RUC', 'Nombre y Apellido', 'e-mail','editar/borrar' ],
+            footerRow: [ 'RUC', 'Nombre y Apelido', 'e-mail','editar/borrar' ],
             dataRows: [
-                ['Airi Satou', 'Andrew Mike', 'Develop', 'btn-round'],
-                ['Ashton Cox', 'Alex Mike', 'Design', 'btn-simple'],
-                ['Airi Satou', 'Andrew Mike', 'Develop', 'btn-round'],
-                ['Ashton Cox', 'Alex Mike', 'Design', 'btn-simple'],
-                ['Airi Satou', 'Andrew Mike', 'Develop', 'btn-round'],
-                ['Ashton Cox', 'Alex Mike', 'Design', 'btn-simple'],
-                ['Airi Satou', 'Andrew Mike', 'Develop', 'btn-round'],
-                ['Ashton Cox', 'Alex Mike', 'Design', 'btn-simple']
+              // ['Airi Satou', 'Andrew Mike', 'Develop', 'btn-round'],
+              // ['Ashton Cox', 'Alex Mike', 'Design', 'btn-simple'],
+              // ['Airi Satou', 'Andrew Mike', 'Develop', 'btn-round'],
+              // ['Ashton Cox', 'Alex Mike', 'Design', 'btn-simple'],
+              // ['Airi Satou', 'Andrew Mike', 'Develop', 'btn-round'],
+              // ['Ashton Cox', 'Alex Mike', 'Design', 'btn-simple'],
+              // ['Airi Satou', 'Andrew Mike', 'Develop', 'btn-round'],
+              // ['Ashton Cox', 'Alex Mike', 'Design', 'btn-simple']
             ]
          };
 
