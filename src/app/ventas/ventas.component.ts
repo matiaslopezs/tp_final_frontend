@@ -58,6 +58,7 @@ export class VentasComponent implements OnInit {
     }).then(() => {
       this.venta = new Venta();
       this.venta.fecha = new Date();
+      this.detalles = [];
     });
   }
 
