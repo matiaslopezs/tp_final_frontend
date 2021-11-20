@@ -51,7 +51,10 @@
                                 </td>
                                 <td>{{ detalle.total }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-danger" (click)="eliminarProducto(detalle)">-</button>
+                                  <a (click)="eliminarProducto(detalle)" class="btn btn-link btn-danger btn-just-icon remove">
+                                    <i class="material-icons">delete</i>
+                                  </a>
+
                                 </td>
                             </tr>
                             <tr>
@@ -63,22 +66,24 @@
                                   </mat-select>
                                 </td>
                                 <td>
-                                  <input matInput name="cantidad" placeholder="Cantidad" type="number" [(ngModel)]="detalle.cantidad">
+                                  <input matInput name="cantidad" placeholder="Cantidad" type="number" (input)="cantidadHandler($event)">
                                 </td>
                                 <td>
-                                  <input matInput name="total" placeholder="Total" type="number" [(ngModel)]="detalle.total">
+                                  {{ detalle.total }}
                                 </td>
                                 <td>
-                                  <button (click)="agregarProducto()" class="btn btn-success text-center">+</button>
+                                  <a (click)="agregarProducto()" class="btn btn-link btn-success btn-just-icon edit">
+                                    <i class="material-icons">add</i>
+                                  </a>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <!-- show total of sale 'venta.total'  -->
                     <div class="row">
-                        <div class="col-sm-12 p-3">
-                            <h5>Total: {{venta.total}}</h5>
-                        </div>
+                      <div class="col-sm-12 px-5">
+                          <h5 *ngIf="venta.total">Total Venta: {{venta.total}}</h5>
+                      </div>
                     </div>
                 </div>
               </form>
